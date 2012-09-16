@@ -1,5 +1,20 @@
 // PICKING COLOR module.
 
+// Initalize the color database.
+// The Color picked related functions.
+function initColorDatabase()
+{
+        this.colors = new Array("#F8F4FF", "#F3E5AB", " #FAEBD7", "#E52B50 ", "#960018", "#FE28A2", "#FF6FFF", "#FF69B4", "#FBAED2", "#F88379", "#A52A2A", "#C41E3A", "#C71585", "#B2
+2222", "#E25822", "#AB4E52", "#800000", "#FF2400", "#722F37", "#E0115F", "#FF004F", "#915C83", "#65000B", " ", "#66FF00", "#228b22", "#808000", " #00A693", "#808080", "#B2BEB5", "#4
+83C32");
+
+        this.pickedColor = new Array();
+
+        for (var i=0; i < this.colors.length; i++) {
+                this.pickedColor[i] = 0;
+        }
+}
+
 // Pick a color.
 function pickColor()
 {
