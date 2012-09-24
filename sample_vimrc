@@ -1,0 +1,60 @@
+ble syntax highlighting
+syntax on
+
+" One of the most important options to activate. Allows you to switch from an
+" " unsaved buffer without saving it first. Also allows you to keep an undo
+" " history for multiple files. Vim will complain if you try to quit without
+" " saving, and swap files will keep you safe if your computer crashes.
+set hidden
+
+" Better command-line completion
+set wildmode=longest:full
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" " mapping of <C-L> below)
+set hlsearch
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+" Enable use of the mouse for all modes
+" set mouse=a
+
+"Reload files changed outside vim
+set autoread
+
+"Start scrolling when we're 8 lines away from margins
+set scrolloff=8
+
+" Set tab size as 8
+set ts=8
+
+" Highlight lines over 80 columns
+if has('matchadd')
+    :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+    :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+else
+    :au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/
+endif
+
+" Highlight the searched item
+:set hlsearch
+
+" Automatically read a file that has changed on disk
+set autoread
+
+" Show the number detail
+set nu
+
+" set color as 256
+set t_Co=256
+
+" Set the color scheme
+colorscheme zellner
+
+"Max tab number
+set tabpagemax=15
