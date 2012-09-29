@@ -1,0 +1,42 @@
+<html>
+<head>
+ <title>Temp File</title>
+</head>
+
+<script>
+
+function createzdiv(){
+	document.getElementById('wholepage').style.width='100%';
+	document.getElementById('wholepage').style.height='100%';
+	document.getElementById('wholepage').style.zIndex = '500';
+	document.getElementById('wholepage').style.display='block';
+
+	document.getElementById('hoverDiv').style.zIndex = '9999';
+	document.getElementById('hoverDiv').style.display='block';
+
+}
+
+function removezdiv() {
+	document.getElementById('wholepage').style.width='0%';
+	document.getElementById('wholepage').style.height='0%';
+	document.getElementById('wholepage').style.zIndex = '500';
+	document.getElementById('wholepage').style.display='none';
+
+	document.getElementById('hoverDiv').style.zIndex = '9999';
+	document.getElementById('hoverDiv').style.display='none';
+}
+</script>
+
+<body>
+<div id="wholepage" style="background-color:black; height:0%; width:0%;opacity:0.28; display:none; position:absolute" >
+</div> 
+<input type='submit' value='Create a z div' float:left onclick='javascript:createzdiv()' />
+
+<div id="hoverDiv" style="background-color:white; height:70%; width:70%; float:center; border: 1px solid blue; margin-top:8%; margin-left:15%; display:none; position:absolute;
+" >
+	This is where the content would go 
+	<input type='submit' value='Go Back to previous view' float:left onclick='javascript:removezdiv()'/>
+
+</div>
+
+</body>
