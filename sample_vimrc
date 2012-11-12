@@ -58,3 +58,12 @@ colorscheme zellner
 
 "Max tab number
 set tabpagemax=15
+
+" Highlight whitespaces at end of line
+highlight WhitespaceEOL ctermbg=red
+" Highlight spaces before tab
+match WhitespaceEOL /\s\+$/
+
+" Turning on omnicomplete
+filetype plugin on
+set ofu=syntaxcomplete#Complete
