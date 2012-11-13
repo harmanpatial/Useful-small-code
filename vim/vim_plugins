@@ -1,0 +1,23 @@
+#########################################################
+# DO NOT USE THE FOLLOWING PLUGIN
+#########################################################
+
+# DANGER -- This is somehow not compatible with other vim plugins,
+# not sure why.
+showmark
+
+#########################################################
+# General vim plugins
+#########################################################
+
+# Code completion : C, Python, html.
+snipMate
+
+#Tagging the code.
+taglist
+
+#General grep, will open a new vi window.
+grep
+
+# For css style
+css_color
