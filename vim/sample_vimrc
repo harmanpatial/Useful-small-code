@@ -1,4 +1,4 @@
-ble syntax highlighting
+" Enable syntax highlighting
 syntax on
 
 " One of the most important options to activate. Allows you to switch from an
@@ -30,19 +30,21 @@ set autoread
 "Start scrolling when we're 8 lines away from margins
 set scrolloff=8
 
-" Set tab size as 8
-set ts=8
+" Set tab size as 4
+set ts=4
 
 " Highlight lines over 80 columns
-if has('matchadd')
-    :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-    :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-else
-    :au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/
-endif
+" if has('matchadd')
+"   :au BufWinEnter *c let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+"   :au BufWinEnter *c let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+" else
+"       :au BufRead,BufNewFile *c syntax match ErrorMsg /\%>80v.\+/
+" endif
 
 " Highlight the searched item
-:set hlsearch
+set incsearch
+set showmatch
+set hlsearch
 
 " Automatically read a file that has changed on disk
 set autoread
@@ -54,9 +56,14 @@ set nu
 set t_Co=256
 
 " Set the color scheme
-colorscheme zellner
 
-"Max tab number
+" For lighter backgound
+colorscheme desert
+
+" For black background
+" colorscheme zellner
+
+"max tab number
 set tabpagemax=15
 
 " Highlight whitespaces at end of line
@@ -67,3 +74,58 @@ match WhitespaceEOL /\s\+$/
 " Turning on omnicomplete
 filetype plugin on
 set ofu=syntaxcomplete#Complete
+
+" Fix the difficult-to-read default setting for diff text highlighting.  The
+" " bang (!) is required since we are overwriting the DiffText setting. The
+" highlighting
+" " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
+" colors.
+highlight! link DiffText MatchParen
+
+
+" Fix the difficult-to-read default setting for diff text highlighting.  The
+" " bang (!) is required since we are overwriting the DiffText setting. The
+" highlighting
+" " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
+" colors.
+" highlight! link DiffText MatchParen
+
+" Change color scheme when doing vim diff
+" if &diff
+"   colorscheme murphy
+" endif
+
+" Remap Q to q
+" cmap Q q
+
+" Mapping Ctrl+space to Ctrl+x, Ctrl+o for
+" data structure completion.
+imap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
+
+" set foldmethod=syntax
+set foldlevel=1
+set foldclose=all
+
+" Change color scheme when doing vim diff
+" if &diff
+"     colorscheme murphy
+" endif
+
+hi DiffText   cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
+hi DiffChange cterm=none ctermfg=Black ctermbg=LightMagenta gui=none guifg=Black guibg=LightMagenta
+
+execute pathogen#infect()
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs=1
+
+" Open NERDTree using q
+" nmap \ <ESC>:NERDTree .<ENTER>

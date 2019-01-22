@@ -1,0 +1,26 @@
+#Git Template v1.2
+
+JIRA#: ER#: Short Summary Description (one line)
+
+******** For Release Notes **********
+
+* [CQXXXXXX]  : Short Summary Description (one line)
+
+   Resolution : Summary of the solution (1-2 lines)
+   Scope      : 577XX/578XX Series Adapters
+
+****** For Internal Purposes ********
+
+PROBLEM DESCRIPTION:
+	Brief description of problem as seen by the user or why a feature was needed.
+	A more detailed description may follow, if applicable.
+       NOTE: This will go into Release Notes.
+
+SOLUTION:
+	Briefly describe code change added using end-user terminology.
+	A more detailed description may follow, if applicable.
+       NOTE: This will go into Release Notes.
+
+CQ:
+
+Not Reviewed-by: People one <people.one@gmail.com>
